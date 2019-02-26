@@ -2,4 +2,4 @@
 
 Mostly playing wit DOM Api
 
-[Demo]()
+[Demo](https://temu4.github.io/weapons-explorer/)
