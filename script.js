@@ -43,6 +43,32 @@ const topicTitle = document.getElementById('topicTitle');
 const topicImg = document.getElementById('topicImg');
 const topicDescription = document.getElementById('topicDescription');
 
+const dataTypes = [
+  'pistols',
+  'winchesters',
+  'machineGuns',
+  'sniperRifles',
+  'grenades',
+  'ammunition'
+];
+
+//Generator for content
+const generateContent = (title, img, description) => {
+  topicTitle.textContent = title;
+  topicImg.style.backgroundImage = img;
+  topicDescription.textContent = description;
+};
+
+sideMenu.addEventListener('click', e => {
+  for (let i = 0; i < dataTypes.length; i++) {
+    if (dataTypes[i]) {
+      generateContent(titles[i], imgs[i], descriptions[i]);
+      sideMenu.classList.remove('visible');
+    }
+  }
+});
+
+/** 
 //Menu elements
 const pistols = document.getElementById('pistols');
 const winchesters = document.getElementById('winchesters');
@@ -60,13 +86,6 @@ const menuElements = [
   ammunition
 ];
 
-//Generator for content
-const generateContent = (title, img, description) => {
-  topicTitle.textContent = title;
-  topicImg.style.backgroundImage = img;
-  topicDescription.textContent = description;
-};
-
 //Create events
 for (let i = 0; i < menuElements.length; i++) {
   menuElements[i].addEventListener('click', () => {
@@ -74,3 +93,5 @@ for (let i = 0; i < menuElements.length; i++) {
     sideMenu.classList.remove('visible');
   });
 }
+
+**/
